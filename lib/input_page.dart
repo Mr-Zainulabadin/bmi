@@ -6,7 +6,7 @@ import 'icon_file.dart';
 const activeColor = Color(0xFF393A5D);
 const deactiveColor = Color(0xFF111328);
 
-enum Gender{
+enum Gender {
   male,
   female,
 }
@@ -17,20 +17,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleColor = deactiveColor;
-  Color femaleColor = deactiveColor;
-
-  void updateColor(Gender gendertype) {
-    setState(() {
-      if (gendertype == Gender.male) {
-        maleColor = activeColor;
-        femaleColor = deactiveColor;
-      } else if (gendertype == Gender.female) {
-        maleColor = deactiveColor;
-        femaleColor = activeColor;
-      }
-    });
-  }
+  Gender selectedGender = Gender.male; // Initialized to Gender.male
 
   @override
   Widget build(BuildContext context) {
@@ -47,30 +34,34 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      updateColor(Gender.male);
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
                     },
                     child: ContainerRepeated(
                       cardWidget: RepeatedIcon(
-                        color: maleColor,
+                        color: selectedGender == Gender.male ? activeColor : deactiveColor,
                         iconData: FontAwesomeIcons.male,
                         label: 'Male',
                       ),
-                      colors: maleColor,
+                      colors: selectedGender == Gender.male ? activeColor : deactiveColor,
                     ),
                   ),
                 ),
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      updateColor(Gender.female);
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
                     },
                     child: ContainerRepeated(
                       cardWidget: RepeatedIcon(
-                        color: femaleColor,
+                        color: selectedGender == Gender.female ? activeColor : deactiveColor,
                         iconData: FontAwesomeIcons.female,
                         label: 'Female',
                       ),
-                      colors: femaleColor,
+                      colors: selectedGender == Gender.female ? activeColor : deactiveColor,
                     ),
                   ),
                 ),
