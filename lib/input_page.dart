@@ -32,13 +32,13 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.male;
-                      });
-                    },
+
                     child: ContainerRepeated(
+                      onPressed: (){
+                        setState(() {
+                          selectedGender=Gender.male;
+                        });
+                      },
                       cardWidget: RepeatedIcon(
                         color: selectedGender == Gender.male ? activeColor : deactiveColor,
                         iconData: FontAwesomeIcons.male,
@@ -46,16 +46,16 @@ class _InputPageState extends State<InputPage> {
                       ),
                       colors: selectedGender == Gender.male ? activeColor : deactiveColor,
                     ),
-                  ),
+
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.female;
-                      });
-                    },
+
                     child: ContainerRepeated(
+                      onPressed: (){
+                        setState(() {
+                          selectedGender=Gender.female;
+                        });
+                      },
                       cardWidget: RepeatedIcon(
                         color: selectedGender == Gender.female ? activeColor : deactiveColor,
                         iconData: FontAwesomeIcons.female,
@@ -63,7 +63,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                       colors: selectedGender == Gender.female ? activeColor : deactiveColor,
                     ),
-                  ),
+
                 ),
               ],
             ),
@@ -74,13 +74,13 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ContainerRepeated(
                     colors: Colors.blue,
-                    cardWidget: Text('Some Widget'),
+                    cardWidget: Text('Some Widget'), onPressed: () {  },
                   ),
                 ),
                 Expanded(
                   child: ContainerRepeated(
                     colors: Color(0xFF1D1E33),
-                    cardWidget: Text('Another Widget'),
+                    cardWidget: Text('Another Widget'), onPressed: () {  },
                   ),
                 ),
               ],
@@ -89,7 +89,7 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ContainerRepeated(
               colors: Color(0xFF1D1E33),
-              cardWidget: Text('Single Widget'),
+              cardWidget: Text('Single Widget'), onPressed: () {  },
             ),
           ),
         ],
