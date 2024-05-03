@@ -69,6 +69,12 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
+            child: ContainerRepeated(
+              colors: Color(0xFF1D1E33),
+              cardWidget: Text('Single Widget'), onPressed: () {  },
+            ),
+          ),
+          Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
@@ -86,12 +92,7 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
-            child: ContainerRepeated(
-              colors: Color(0xFF1D1E33),
-              cardWidget: Text('Single Widget'), onPressed: () {  },
-            ),
-          ),
+
         ],
       ),
     );
