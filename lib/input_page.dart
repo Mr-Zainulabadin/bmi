@@ -6,6 +6,7 @@ import 'container_file.dart';
 import 'icon_file.dart';
 import 'constantFile.dart'; // Corrected import
 import 'resultFile.dart';
+import 'calculatorFile.dart';
 
 enum Gender {
   male,
@@ -68,28 +69,23 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-
             child: ContainerRepeated(
-
-
               colors: Color(0xFF1D1E33),
               cardWidget: Column(
-
                 mainAxisAlignment: MainAxisAlignment.center,
-
                 children: <Widget>[
                   Text(
                     'Height',
                     style: kLabelStyle,
                   ),
                   Row(
-                    
+
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         sliderHeight.toString(),
                         style: TextStyle(
-                          fontSize: 50.0,
+                          fontSize: 35.0,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -208,7 +204,18 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: (){
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> ResultScreen ()));
+              CalculatorBrain  calc= CalculatorBrain(height: sliderHeight,weight: sliderWeight);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultScreen(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(), // Use getInterpretation here
+                  ),
+                ),
+              );
+
 
             },
           child: Container(

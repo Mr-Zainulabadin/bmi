@@ -7,6 +7,11 @@ import 'constantFile.dart';
 class ResultScreen extends StatelessWidget {
 
 
+  ResultScreen({required this.interpretation,required this.bmiResult,required this.resultText});
+  final String interpretation;
+  final String bmiResult;
+  final String resultText;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,23 +33,23 @@ class ResultScreen extends StatelessWidget {
           Expanded(
             flex: 5,
             child: ContainerRepeated(
-              colors: activeColor,
+              colors: deactiveColor,
               cardWidget: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    resultText.toUpperCase(),
                     style: kresultStyle,
                   ),
                   Text(
-                    '180',
-                    style: kresultStyle,
+                    bmiResult,
+                    style: kbmitStyle,
                   ),
                   Text(
-                    'BMI is low you should have to work more',
+                    interpretation,
                     textAlign: TextAlign.center,
-                    style: kresultStyle,
+                    style: interpretationStyle,
                   ),
                 ],
 

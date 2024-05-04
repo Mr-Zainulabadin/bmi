@@ -22,7 +22,17 @@ const kTittleStyle= TextStyle(
 
 const kresultStyle = TextStyle(
     fontSize: 30.0,
-    color: Colors.blue,
+    color: Colors.green,
+  fontWeight: FontWeight.bold,
 
 );
 
+const kbmitStyle = TextStyle(
+  fontSize: 60.0,
+  fontWeight: FontWeight.bold,
+);
+
+
+const interpretationStyle = TextStyle(
+  fontSize: 30.0,
+);
