@@ -17,6 +17,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.male; // Initialized to Gender.male
   int sliderHeight = 180;
+  int sliderWeight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +65,12 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
+
             child: ContainerRepeated(
+
               colors: Color(0xFF1D1E33),
               cardWidget: Column(
+
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
@@ -90,6 +94,7 @@ class _InputPageState extends State<InputPage> {
                     ],
                   ),
                   Slider(
+
                     value: sliderHeight.toDouble(),
                     min: 120.0,
                     max: 220.0,
@@ -110,8 +115,27 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ContainerRepeated(
-                    colors: Colors.blue,
-                    cardWidget: Text('Some Widget'),
+                    colors: Color(0xFF111328),
+                    cardWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget> [
+                        Text(
+                          'WEIGHT',
+                          style: kLabelStyle,
+                        ),
+                        Text(
+                          sliderWeight.toString(),
+                          style: kLabelStyle,
+
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+
+                          ],
+                        ),
+                      ],
+                    ),
                     onPressed: () {},
                   ),
                 ),
@@ -130,3 +154,5 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
+
