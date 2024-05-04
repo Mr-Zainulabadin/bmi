@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'container_file.dart';
+import 'constantFile.dart';
+import 'package:flutter/material.dart';
 
 class ContainerRepeated extends StatelessWidget {
+  final Color colors;
+  final Widget cardWidget;
+  final VoidCallback onPressed; // Correct type for onPressed
+
   ContainerRepeated({
     required this.colors,
     required this.cardWidget,
-    required this.onPressed,
+    required this.onPressed, // Declaring onPressed as required
   });
-
-  final Color colors;
-  final Widget cardWidget;
-  final VoidCallback onPressed; // Change Function to VoidCallback
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,11 @@ class ContainerRepeated extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         margin: EdgeInsets.all(15.0),
-        child: cardWidget,
         decoration: BoxDecoration(
           color: colors,
           borderRadius: BorderRadius.circular(10.0),
         ),
+        child: cardWidget,
       ),
     );
   }
