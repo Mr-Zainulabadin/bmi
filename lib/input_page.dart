@@ -1,8 +1,11 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_file.dart';
 import 'icon_file.dart';
 import 'constantFile.dart'; // Corrected import
+import 'resultFile.dart';
 
 enum Gender {
   male,
@@ -200,6 +203,23 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> ResultScreen ()));
+
+            },
+          child: Container(
+            child: Center(
+              child: Text('Calculate',
+                style: klargeButtons,),
+            ),
+
+            color: Color(0xFFEB1555),
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: 80.0,
+          ),),
+
         ],
       ),
     );

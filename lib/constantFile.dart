@@ -7,4 +7,10 @@ const deactiveColor = Color(0xFF111328);
 const kLabelStyle = TextStyle(
   fontSize: 30.0,
   color: Color(0xFF8D8E98)
+
+);
+
+const klargeButtons = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
 );
