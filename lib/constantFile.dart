@@ -14,3 +14,15 @@ const klargeButtons = TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
 );
+
+const kTittleStyle= TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold,
+);
+
+const kresultStyle = TextStyle(
+    fontSize: 30.0,
+    color: Colors.blue,
+
+);
+
