@@ -1,10 +1,10 @@
+import 'package:bmi/constantFile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_file.dart';
 import 'icon_file.dart';
+import 'container_file.dart';
 
-const activeColor = Color(0xFF393A5D);
-const deactiveColor = Color(0xFF111328);
 
 enum Gender {
   male,
@@ -71,7 +71,11 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ContainerRepeated(
               colors: Color(0xFF1D1E33),
-              cardWidget: Text('Single Widget'), onPressed: () {  },
+              cardWidget: Column(
+                children: <Widget> [
+                  Text('Height',style: kLabelStyle,),
+                ],
+              ), onPressed: () {  } ,
             ),
           ),
           Expanded(

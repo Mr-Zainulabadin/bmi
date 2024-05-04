@@ -1,6 +1,8 @@
+import 'package:bmi/constantFile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'container_file.dart';
 
 class RepeatedIcon extends StatelessWidget {
   RepeatedIcon({required this.iconData, required this.label, required Color color});
@@ -22,11 +24,8 @@ class RepeatedIcon extends StatelessWidget {
         ),
         Text(
           label,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Color(0xFF8D8E98),
-          ),
-        )
+          style: kLabelStyle,
+        ),
       ],
     );
   }
